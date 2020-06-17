@@ -12,17 +12,23 @@ values for the integer and error message.
 :score: integer score of test
 :error_message: string that is printed if invalid input is received.
 :returns: Test name and score as a string'''
-def measurements(inputA, inputB):
+def measurements(a_list):
     perim_result = 0.0
     area_result = 0.0
 
-    def area(a_list):
-        return
-        pass
     def perimeter(a_list):
-        return
-        pass
+        perimeter_result = 0
+        for side in a_list:
+            perimeter_result += side * 2
+        return perimeter_result
 
+    def area(a_list):
+        sideA = a_list[0]
+        sideB = a_list[1]
+        area_result = sideA * sideB
+        return area_result
 
+    return('Perimeter = ' + str(perimeter(a_list)) + '  Area = ' + str(area(a_list)))
 
-    print('Perimeter = ' + str(perim_result) + '   Area = ' + str(area_result))
+if __name__ == '__main__':
+    print(measurements([1,2]))
