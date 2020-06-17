@@ -23,9 +23,9 @@ class MyTestCase(unittest.TestCase):
         test_results = 'Invalid test score, Please try again'
         self.assertEqual(test_results, valid.score_input('test', 'test'))
 
-    # def test_score_input_invalid_message(self):
-    #     test_results = 'test message'
-    #     self.assertEqual(test_results, valid.score_input('test', 'test', 'test message'))
+    def test_score_input_invalid_message(self):
+        test_results = 'test message'
+        self.assertEqual(test_results, valid.score_input('test', 'test', 'test message'))
 
 
 if __name__ == '__main__':
