@@ -57,15 +57,13 @@ def valid_name_check(input_string):
     return result
 
 '''Method calls get_name(), get_hours(), and get_pay(). All results are saved as variables that are
-then printed with additional text'''
+then returned as a string'''
 def hourly_employee_input():
     user_name = get_name()
     user_hours = get_hours()
     user_pay = get_pay()
-
-    print(user_name + ' worked ' + str(user_hours) +
-          ' hours at a pay rate of ' +
-          str(round(user_pay, 2)) + ' for a total of $' + str(weekly_pay(user_hours, user_pay)))
+    output_string = str(user_name + ' makes $' + str(round(user_pay, 2)) + ' an hour. Their weekly pay is ' + str(weekly_pay(user_hours, user_pay)))
+    return output_string
 
 '''This takes in hourly pay and hours worked and returns weekly pay
 :input_hours: hours worker worked this week
@@ -77,7 +75,7 @@ def weekly_pay(input_hours, input_payrate):
 
 if __name__ == '__main__':
     try:
-        hourly_employee_input()
+        print(hourly_employee_input())
     except ValueError as err:
         print("Someone did something dumb so I'm gonna crash. Peace.")
 
