@@ -6,16 +6,14 @@ Last Modified: 06/17/2020
 Program to demonstrate inner functions
 """
 
-'''This takes in an input string, integer, and a error message. There are default
-values for the integer and error message.
-:name: string test name
-:score: integer score of test
-:error_message: string that is printed if invalid input is received.
-:returns: Test name and score as a string'''
+'''This takes in an input list, calls perimeter() and area(), then prints final string.
+:a_list: input list of 1 or 2 numbers
+:returns: Perimeter and area in a string'''
 def measurements(a_list):
-    perim_result = 0.0
-    area_result = 0.0
 
+    '''This takes a list and returns perimeter.
+    :a_list: input list of 1 or 2 numbers
+    :returns: Returns perimeter'''
     def perimeter(a_list):
         perimeter_result = 0
         if len(a_list) == 1:
@@ -25,6 +23,9 @@ def measurements(a_list):
                 perimeter_result += side * 2
         return perimeter_result
 
+    '''This takes a list and returns area.
+    :a_list: input list of 1 or 2 numbers
+    :returns: Returns area'''
     def area(a_list):
         if len(a_list) == 1:
             area_result = a_list[0] * a_list[0]
